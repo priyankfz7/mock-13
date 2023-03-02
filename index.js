@@ -8,6 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send(
+    "random word generator + game user api  routes are /randomword, /users"
+  );
+});
+
 app.get("/randomword", (req, res) => {
   let word = randomWords(1);
   console.log(word);
